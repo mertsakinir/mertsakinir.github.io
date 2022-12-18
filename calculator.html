@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="/js/math.js" type="text/javascript"></script>
+  <title>Effiency Calculator</title>
+</head>
+<body id="calculator">
+  <nav class="navbar navbar-dark navbar-expand-md bg-dark">
+    <!-- Navbar content -->
+    <div class="container">
+      <a href="/index.html" class="navbar-brand">
+        <i class="bi bi-calculator" style="font-size: 2rem; color: cornflowerblue;"></i>
+        Effiency Calculator
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="/calculator.html">Hesaplayici</a>
+          <a class="nav-link" href="/index.html">Cikis Yap</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container">
+    <div class="row mt-5">
+      <!-- INPUTS -->
+      <div class="col-6 mt-5">
+        <div class="card">
+          <div class="card-header text-center">
+            <h3>
+              <i class="bi bi-activity" style="font-size: 2rem; color: cornflowerblue;"></i>
+              INPUTS
+            </h3>
+          </div>
+          <div class="card-body">
+            <form action="" id="inputForm">
+              <div class="row">
+                <div class="col me-3">
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="kva" placeholder="KVA">
+                    <label for="kva">KVA</label>
+                  </div>
+    
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="load" placeholder="KVA">
+                    <label for="load">Load</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="powerFactorLoad" placeholder="KVA">
+                    <label for="powerFactorLoad">Power Factor Load</label>
+                  </div>
+                </div>
+                <div class="col ms-3">
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="v1" placeholder="V1">
+                    <label for="v1">V1</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="v2" placeholder="V2">
+                    <label for="v2">V2</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="frequency" placeholder="Frequency">
+                    <label for="frequency">Frequency</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-5">
+                <div class="col me-3">
+                  <div class="input-group mb-3">
+                    <div class="form-floating">
+                      <input type="text" class="form-control" id="r1" placeholder="R1">
+                      <label for="r1">R1</label>
+                    </div>
+                    <span class="input-group-text">Ohm</span>
+                  </div>
+                  <div class="input-group mb-3">
+                    <div class="form-floating">
+                      <input type="text" class="form-control" id="r2" placeholder="R2">
+                      <label for="r2">R2</label>
+                    </div>
+                    <span class="input-group-text">Ohm</span>
+                  </div>
+                  <div class="input-group mb-3">
+                    <div class="form-floating">
+                      <input type="text" class="form-control" id="rc" placeholder="RC">
+                      <label for="rc">RC</label>
+                    </div>
+                    <span class="input-group-text">Ohm</span>
+                  </div>
+                </div>
+                <div class="col ms-3">
+                  <div class="input-group mb-3">
+                    <div class="form-floating">
+                      <input type="text" class="form-control" id="l1" placeholder="L1">
+                      <label for="l1">L1</label>
+                    </div>
+                    <span class="input-group-text">Ohm</span>
+                  </div>
+                  <div class="input-group mb-3">
+                    <div class="form-floating">
+                      <input type="text" class="form-control" id="l2" placeholder="L2">
+                      <label for="l2">L2</label>
+                    </div>
+                    <span class="input-group-text">Ohm</span>
+                  </div>
+                  <div class="input-group mb-3">
+                    <div class="form-floating">
+                      <input type="text" class="form-control" id="xm" placeholder="Xm">
+                      <label for="xm">Xm</label>
+                    </div>
+                    <span class="input-group-text">Ohm</span>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-2 mx-3">
+                <button type="submit" class="btn btn-primary form-control">HESAPLA</button>
+                <button type="reset" class="btn btn-danger form-control mt-3">TEMIZLE</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- OUTPUTS -->
+      <div class="col-6 mt-5">
+        <div class="card">
+          <div class="card-header text-center">
+            <h3>
+              <i class="bi bi-clipboard-data" style="font-size: 2rem; color: cornflowerblue;"></i>
+              OUTPUTS
+            </h3>
+          </div>
+          <div class="card-body">
+            <div class="accordion" id="outputsAccordion">
+              <!-- I1 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    I1
+                  </button>
+                </h3>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#outputsAccordion">
+                  <div class="text-center" id="i1Output"></div>
+                </div>
+              </div>
+
+              <!-- I2 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    I2
+                  </button>
+                </h3>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#outputsAccordion">
+                  <div class="text-center" id="i2Output"></div>
+                </div>
+              </div>
+
+              <!-- E1 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                    E1
+                  </button>
+                </h3>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#outputsAccordion">
+                  <div class="text-center" id="e1Output"></div>
+                </div>
+              </div>
+
+              <!-- E2 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                    E2
+                  </button>
+                </h3>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#outputsAccordion">
+                  <div class="text-center" id="e2Output"></div>
+                </div>
+              </div>
+
+              <!-- Po -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingFive">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                    Po
+                  </button>
+                </h3>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#outputsAccordion">
+                  <div class="text-center" id="poOutput"></div>
+                </div>
+              </div>
+
+              <!-- Pi -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingSix">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                    Pi
+                  </button>
+                </h3>
+                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#outputsAccordion">
+                  <div class="text-center" id="piOutput"></div>
+                </div>
+              </div>
+
+              <!-- Z1 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingSeven">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+                    Z1
+                  </button>
+                </h3>
+                <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#outputsAccordion">
+                  <div class="text-center" id="z1Output"></div>
+                </div>
+              </div>
+
+              <!-- Z2 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingEight">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
+                    Z2
+                  </button>
+                </h3>
+                <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#outputsAccordion">
+                  <div class="text-center" id="z2Output"></div>
+                </div>
+              </div>
+
+              <!-- V1 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingNine">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="true" aria-controls="collapseNine">
+                    V1
+                  </button>
+                </h3>
+                <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#outputsAccordion">
+                  <div class="text-center" id="v1Output"></div>
+                </div>
+              </div>
+
+              <!-- Efficieny -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="headingTen">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="true" aria-controls="collapseTen">
+                    Efficiency
+                  </button>
+                </h3>
+                <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#outputsAccordion">
+                  <div class="text-center" id="effiencyOutput"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <footer class="footer bg-dark text-light text-center mt-auto">
+    <div class="text-center p-3">
+      © 2022 Copyright: Mert SAKINIR
+    </div>
+  </footer>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script src="/js/calculator.js"></script>
+</body>
+</html>
